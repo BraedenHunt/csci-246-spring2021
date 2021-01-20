@@ -71,24 +71,33 @@ I suggest [creating a fork](https://help.github.com/articles/fork-a-repo/),
 so that you can use your fork to maintain your own
 materials for this class.  See the resources section below for forking directions.
 
-To clone this repo:
+To clone this repo using HTTPS:
 ```
-$ git clone https://bitbucket.org/msu-cs/csci-246-fall2018.git
+$ git clone https://github.com/brittany/csci-246-spring2021.git
+
 ```
+
+To clone this repo using SSH:
+```
+$ git clone git@github.com:msu/csci-246-spring2021.git
+```
+
 
 ## Other Course Tools 
 
-- Group discussions, questions, and announcements will be through [Piazza](TODO).
+- Group discussions, questions, and announcements will be through [Discord](
+https://discord.com/channels/798957218384183427/798957219885350986).
 - Homework will be graded on Gradescope.
 
 ## Grading
 Your grade for this class will be determined by:
 
-- ??% WebAssign and Class Participation 
-- ??% Homework
-- ??% Midterm
-- ??% Final 
-- ??% Miscellaneous Opportunities
+TODO: will be updated shortly
+- 30% WebAssign and Class Participation 
+- 30% Homework
+- 15% Midterm
+- 15% Final 
+- 12% Miscellaneous Opportunities
 
 ## Class Policies
 
@@ -260,7 +269,17 @@ hear or smell you.
 - Topics: Introduction to Proofs, LaTex 
 - Reading: Chapters 1 and 2
 - Miro Links: [M](https://miro.com/app/board/o9J_lYjeVOc=/), [W](https://miro.com/app/board/o9J_lYjeVAM=/),
-  [Wb](https://miro.com/app/board/o9J_lYjeVOc=/), F
+  [Wb](https://miro.com/app/board/o9J_lYjeVOc=/),
+  [F](https://miro.com/app/board/o9J_lY4PAhw=/)
+
+### Week 2 (18 January 2021)
+- Monday is a holiday: MLK day
+- Topics: Introduction to Proofs, LaTex 
+- Reading: Chapter 2
+- Miro Links: [W](https://miro.com/app/board/o9J_lYfSSec=/),
+  [Wb](https://miro.com/app/board/o9J_lYfSTkQ=/)
+
+
 
 --- 
 
