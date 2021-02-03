@@ -52,7 +52,7 @@ Office hours: Please email or call in advance if you plan to join.  This will
 eliminate waiting (both on your end and on our end).
 
 * Prof. Fasy (x4804): MW, after class, and by appointment.
-* TA: TODO 
+* TA: Monday 11am-12pm by appointment. Please schedule an appointment using [MSU Appointment Scheduler](https://www.montana.edu/scheduler/login/student/?fac=11433).
 
 ## What is in this repository?
 
@@ -94,8 +94,8 @@ Your grade for this class will be determined by:
 
 - 30% WebAssign and Class Participation 
 - 30% Homework
-- 15% Midterm
-- 15% Final 
+- 15% Midterm (12 March 2021)
+- 15% Final (30 April 2021) 
 - 12% Miscellaneous Opportunities
 
 ## Class Policies
@@ -273,11 +273,26 @@ hear or smell you.
 
 ### Week 2 (18 January 2021)
 - Monday is a holiday: MLK day
-- Topics: Introduction to Proofs, LaTex 
+- Topics: Sets, Truth Tables 
 - Reading: Chapter 2
 - Miro Links: [W](https://miro.com/app/board/o9J_lYfSSec=/),
-  [Wb](https://miro.com/app/board/o9J_lYfSTkQ=/), F, Fb
+  [Wb](https://miro.com/app/board/o9J_lYfSTkQ=/), [F](https://miro.com/app/board/o9J_lXxJB5M=/), [Fb](https://miro.com/app/board/o9J_lXxVOK4=/)
 
+### Week 3 (24 January 2021)
+- Topics: Compound Logic Statements, Predicates, and Quantified Statements 
+- Reading: Chapter 3 
+- Miro Links: [M](https://miro.com/app/board/o9J_lXAMeqs=/),
+  [Mb](https://miro.com/app/board/o9J_lXAMe_E=/), [W](https://miro.com/app/board/o9J_lWjUKUY=/),
+  [Wb](https://miro.com/app/board/o9J_lWjUKV8=/), [F](https://miro.com/app/board/o9J_lW0dcX4=/),
+  [Fb](https://miro.com/app/board/o9J_lW0dcQs=/) 
+
+### Week 4 (1 February 2021)
+- Topics: Basic Arguments
+- Reading: Chapter 3
+- Miro Links: [M](https://miro.com/app/board/o9J_lWHaFy4=/),
+  [Mb](https://miro.com/app/board/o9J_lWHaFE8=/),
+  [W](https://miro.com/app/board/o9J_lVg2hgU=/),
+  [Wb](https://miro.com/app/board/o9J_lVg2hsU=/)
 
 
 --- 
