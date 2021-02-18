@@ -292,8 +292,25 @@ hear or smell you.
 - Miro Links: [M](https://miro.com/app/board/o9J_lWHaFy4=/),
   [Mb](https://miro.com/app/board/o9J_lWHaFE8=/),
   [W](https://miro.com/app/board/o9J_lVg2hgU=/),
-  [Wb](https://miro.com/app/board/o9J_lVg2hsU=/)
+  [Wb](https://miro.com/app/board/o9J_lVg2hsU=/),
+  [F](https://miro.com/app/board/o9J_lV4QR0I=/),
+  [Fb](https://miro.com/app/board/o9J_lV4QR1k=/)
 
+### Week 5 (8 February 2021)
+- Topics: Direct Proof and Counter Example
+- Reading: Sections 4.1-6
+- Miro Links: [M](https://miro.com/app/board/o9J_lVMrS4M=/),
+    [Mb](https://miro.com/app/board/o9J_lVMrSHk=/),
+    [W](https://miro.com/app/board/o9J_lUqwRXU=/),
+    [Wb](https://miro.com/app/board/o9J_lUqwRX0=/),
+    [F](https://miro.com/app/board/o9J_lU_ZDi0=/),
+    [Fb](https://miro.com/app/board/o9J_lU_ZDjg=/)
+
+### Week 6 (16 February 2021)
+- Topics: proof by contradiction, gcd algorithm
+- Reading: Chapter 4
+- Miro Links: [W](https://miro.com/app/board/o9J_lTtx36M=/),
+    [Wb](https://miro.com/app/board/o9J_lTtx3OE=/)
 
 --- 
 
