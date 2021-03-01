@@ -4,7 +4,7 @@
 %% UPDATE these variables:
 \renewcommand{\hwnum}{3}
 \title{Discrete Structures, Homework \hwnum}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
+\author{Braeden Hunt (Tinnittin)}
 \collab{n/a}
 \date{due: 5 March 2021}
 
@@ -28,7 +28,7 @@ General homework expectations:
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Good Proofs}
+\collab{n/a} \nextprob{Good Proofs}
 % ============================================
 % ============================================
 
@@ -93,7 +93,7 @@ pennies.
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Four Colors Suffice}
+\collab{n\a} \nextprob{Four Colors Suffice}
 % ============================================
 % ============================================
 
@@ -104,7 +104,25 @@ tree, then the resulting graph has two connected components.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+	A tree is defined as a connected graph that has no cycles. It follows that there is one and only one path from one vertex to any other vertex.
+	
+	
+	The base case is the simplest tree, a graph $G$ with two vertices connected by one edge. By removing the edge, the resulting graph has two connected components. See Figure \ref{graph}.
+	
+	
+	Assume that a tree $P$ is structured is such a way that it satisfies the condition if an edge is removed from $P$, then the resulting graph has 
+	two connected components and that if a tree $G$ is created by adding an edge to $P$, it does not satisfy that condition. This makes the graph $G$ a
+	minimal criminal. We can see that this forms a contradiction, however, as by adding an edge to $P$ to create $G$, we are creating a cycle. We are 
+	connecting two existing vertices with an edge, creating a direct path between them, but as $P$ is a tree, there is already a path between those two vertices.
+	This means that there are two paths between the vertices. Therefore, $G$ is not a tree. Thus, the minimal criminal cannot exist.
+	Because there is no minimal criminal and there is a base case, the statement is true.
+
+ \begin{figure}
+\caption{Base Case}
+\centering
+\includegraphics[width=0.5\textwidth]{images/graphBaseCase}
+\label{graph}
+\end{figure}
 
 % ============================================
 % ============================================
