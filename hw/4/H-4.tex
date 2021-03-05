@@ -91,8 +91,27 @@ $$
 Prove $\sum_{i=1}^n F_i = F_{n+2}-1$.
 
 \paragraph{Answer}
+\textbf{Base Case ($n=3$):}
 
-\todo{your answer here}
+$\sum_{i=1}^3F_i = F_1 + F_2 +F_3 = 1 + 1 + (F_1 + F_2) = 1+1+1+1 = 4$
+
+$F_{3+2}-1 = F_5 - 1 = F_4 + F_3 - 1 = (F_3 + F_2) +(F_2 + F_1) - 1 = ((F_2 + F_1) + 1) + (1 + 1) - 1 =1 + 1 + 1 + 1 + 1 -1 = 4$
+
+\textbf{Assume}:
+
+$P(k) = \sum_{i=1}^k F_i = F_{k+2}-1$ for $k \geq 3$ \quad [This is the inductive assumption]
+
+\textbf{Consider $P(k+1)$:}
+
+$\sum_{i=1}^{k+1} F_i = \sum_{i=1}^k F_i + F_{k+1}$\quad By basic algebra \\
+$= F_{k+2}-1 + F_{k+1}$ \quad By substituting with regards to the inductive assumption \\
+$= F_{k+3} - 1$ \quad By the definition of $F_{k+3}$
+
+\textbf{Conclusion:}
+
+The left hand side of $P(k+1)$ equals the right hand side of $P(k+1)$, as was to be shown.
+
+
 
 % ============================================
 % ============================================
@@ -139,7 +158,7 @@ tree, then the resulting graph has two connected components.
 
 	A tree is defined as a connected graph that has no cycles. It follows that there is one and only one path from one vertex to any other vertex.
 	
-	The base case is the simplest tree, a graph $G$ with two vertices connected by one edge. By removing the edge, the resulting graph has two connected components. See Figure \ref{graph}.
+	The base case is the simplest tree, a graph $G$ with two vertices connected by one edge. By removing the edge, the resulting graph has two connected components. See \textbf{Figure \ref{graph}.}
 	
 	Assume that a tree $P$ is structured is such a way that it satisfies the condition if an edge is removed from $P$, then the resulting graph has 
 	two connected components and that if a tree $G$ is created by adding an edge to $P$, it does not satisfy that condition. This makes the graph $G$ a
