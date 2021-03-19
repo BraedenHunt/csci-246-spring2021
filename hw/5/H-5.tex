@@ -46,7 +46,7 @@ might be colorblind or colorweak (or have a bad computer screen).
 	
 	\item Another way we can make our products more accessible is avoiding differentiating items by color, or color alone. For example, having a graph with two lines on them, one colored green, and the other colored red, will be difficult for people with red-green colorblindness to tell apart. We can avoid this by using signals other than color to differentiate them. In the example of the graph, the two lines could be of different shapes, with one being solid and the other being dotted or dashed.
 	
-	\item We can limit the number of colors we use throughout our product. The less colors we use, the less likely there will be a collision for someone who is color blind.
+	\item We can limit the number of colors we use throughout our product. The less colors we use, the less likely there will be a collision for someone who is color blind. If we use 3 colors, there are 3 different combinations that could be a collision. If there are 5 colors, there are 10 combinations and therefore, over three times as likely for one to occur. Side note: this relationship mirrors the handshake problem.
 	
 	\item We can also use alternative text, which is very common in web development. Alternative text (alt text) is additional information about a figure, especially graphics. Screen readers will read aloud the alt text as a way to describe images. This also displays whenever you hover your mouse over the figure, so even people that aren't able to understand the image by viewing it can read it to get the same understanding.
 	
@@ -72,9 +72,19 @@ what is the number of edges in $K_{n,m}$?
 
 \paragraph{Answer}
 
-\todo{your answer here}
+I conjecture that the number of edges in a complete bipartite graph $K_{n,m}$ is equal to $mn$
 
+Prove that the number of edges in a complete bipartite graph $K_{n,m}$ is equal to $mn$:
 
+We start with the graph $G$, which is the complete bipartite graph $K_{n,m}$ where n and m are defined as positive integers.
+
+Now let $V$ be the set of all vertices in $G$ and $E$ be the set of all edges in $G$.
+
+By the definition of a complete bipartite graph, we can separate $V$ into two disjointed subsets $V_1$ and $V_2$ such that $\forall x, y \in V_i$, $x$ and $y$ are not connected by an edge and $V_1 \cup V_2 = V$. We also know that the size of $V_1$ is equal to $n$ and the size of $V_2$ is equal to $m$ by the definition of a bipartite graph. Finally, we know by the definition of a complete bipartite graph, $\forall x \in V_1, \forall y \in V_2$, $x$ is connected to $y$. Less formally, every vertex in $V_1$ is connected by an edge to every vertex in $V_2$.
+
+We can now find the total degree of the graph. This is the sum of the degree of every vertex in $V$ and will be denoted as $deg(V)$. There are $n$ vertices in $V_1$ connected to $m$ vertices. So the total degree of just the vertices in $V_1$ is $deg(V_1) = m*n$. There are $m$ vertices in $V_2$ connected to $n$ vertices. The total degree of this subset also is $deg(V_2) = m*n$. We know that we have included every vertex in $V$ because $V_1$ and $V_2$ are disjoint and $V_1 \cup V_2 = V$. The total degree of $V$ is $deg(V) = deg(V_1) + deg(V_2) = m*n + m*n = 2mn$.
+
+ Since the total degree of a graph is equal to twice the number of edges ($deg(V) = 2 |E|$), we can see that $2mn = 2|E|$ (Reminder: $E$ is the set of all the edges in $G$). By basic algebra, we get $|E| = mn$, as was to be shown.
 
 
 % ============================================
@@ -120,7 +130,7 @@ Read Chapters $7$ and $8$ of \emph{Four Colors Suffice}.
         intersect at vertices.  Can every polyhedron be drawn in such a way?
 
         \paragraph{Answer}
-        See Figure \ref{graph} for a few drawn projections of a octahedron on the plane such that edges only intersect at vertices. I believe that all convex polyhedron can be drawn this way because the proof by dissection of Euler's polyhedron formula mentioned by Robin Wilson relied on that fact. However, I think that certain polyhedron's that Euler's formula does not sum to 2 on may not have planar projections.
+        See Figure \ref{graph} for a few drawn projections of a octahedron on the plane such that edges only intersect at vertices (specifically, see Projection 4). I believe that all convex polyhedron can be drawn this way because the proof by dissection of Euler's polyhedron formula mentioned by Robin Wilson relied on that fact. However, I think that certain polyhedron's that Euler's formula does not sum to 2 on may not have planar projections.
         
 \begin{figure}
 \caption{Octahedron Projections}
@@ -135,7 +145,7 @@ Read Chapters $7$ and $8$ of \emph{Four Colors Suffice}.
 
 % ============================================
 % ============================================
-\collab{\todo{}}
+\collab{n/a}
 \nextprob{Fran Allen}
 % ============================================
 % ============================================
@@ -151,7 +161,13 @@ biography.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+Frances Allen (1932-2020) was an American computer scientist born in New York. After graduating from the University of Michigan with a master's degree in mathematics, she worked for IBM.
+While there, she spent time teaching IBM scientists FORTRAN and later contributed to the IBM's supercomputer compilers. She went on to found the Parallel TRANslation Group (PTRAN), where she focused
+on efficient programming of computers that had multiple processors (Hosch). 
+
+Her career was filled with awards. She was the first woman to be named an IBM fellow, and the president of the IBM Academy of Technology. She was the first woman to receive the A.M. Turing Award. She also was given the Augusta Ada Lovelace Award. She was also elected to many other positions such as to the IEEE and ACM (Hosch).
+
+Hosch, W. L. (2020). Frances E. Allen. Retrieved March 19, 2021, from \url{https://www.britannica.com/biography/Frances-E-Allen}
 
 % %% ... the bibliography
 % \newpage
