@@ -4,7 +4,7 @@
 %% UPDATE these variables:
 \renewcommand{\hwnum}{5}
 \title{Discrete Structures, Homework \hwnum}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
+\author{Braeden Hunt (Tinnittin)}
 \collab{n/a}
 \date{due: 19 March 2021}
 
@@ -28,7 +28,7 @@ General homework expectations:
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Colors}
+\collab{n/a} \nextprob{Colors}
 % ============================================
 % ============================================
 
@@ -41,8 +41,20 @@ might be colorblind or colorweak (or have a bad computer screen).
 
 
 \paragraph{Answer}
+\begin{enumerate}
+	\item The first thing to do is have high contrast between the text and the background. Black and white work well for this, because they are not colors, so colorblind/colorweak people will not have much difficulty telling them apart. Having blue text on a purple background will be hard for many people to read.
+	
+	\item Another way we can make our products more accessible is avoiding differentiating items by color, or color alone. For example, having a graph with two lines on them, one colored green, and the other colored red, will be difficult for people with red-green colorblindness to tell apart. We can avoid this by using signals other than color to differentiate them. In the example of the graph, the two lines could be of different shapes, with one being solid and the other being dotted or dashed.
+	
+	\item We can limit the number of colors we use throughout our product. The less colors we use, the less likely there will be a collision for someone who is color blind.
+	
+	\item We can also use alternative text, which is very common in web development. Alternative text (alt text) is additional information about a figure, especially graphics. Screen readers will read aloud the alt text as a way to describe images. This also displays whenever you hover your mouse over the figure, so even people that aren't able to understand the image by viewing it can read it to get the same understanding.
+	
+	\item We can also test and review our products. We can convert them to grey scale to see how understandable it is there. We can also use a variety of programs and free tools to see what our products look like to colorblind users, such as \href{https://www.color-blindness.com/coblis-color-blindness-simulator/}{\nolinkurl{Coblis}}. 
+	
+	\url{https://www.color-blindness.com/coblis-color-blindness-simulator/}
 
-\todo{your answer here}
+\end{enumerate}
 
 
 
@@ -67,7 +79,7 @@ what is the number of edges in $K_{n,m}$?
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Four Colors Suffice}
+\collab{n/a} \nextprob{Four Colors Suffice}
 % ============================================
 % ============================================
 
@@ -80,29 +92,43 @@ Read Chapters $7$ and $8$ of \emph{Four Colors Suffice}.
         edges, and faces.  What is the other formula known as Euler's formula?
 
         \paragraph{Answer}
-
-        \todo{your answer here}
+	$e^{i \theta}=\cos(\theta) + i \sin(\theta)$
 
 
 
     \item  Consider the following construction: Start with a solid cube.  Then, slice
-        off a small region around eachvertex (image you have a sharp knife, so you take
+        off a small region around each vertex (image you have a sharp knife, so you take
         off a tetrahedron at each corner).  How many vertices, edges, and faces are on
         the surface of this object before and after this operation? What polyhedron is this?
 
         \paragraph{Answer}
+        The original object (the cube) had 6 faces, 8 vertices, and 12 edges. Cutting off a vertex by slicing a knife through each face
+        creates a new edge for each face sliced through, a new vertex for each edge sliced through and one new face (and removes one vertex, the one being sliced off). Since this is a cubic polyhedron, there are three faces and three edges connected to each vertex, so by removing a vertex, we are slicing through 3 faces and 3 edges. This means that there are 3 new edges, 3 new vertices, and 1 new face. We also removed a vertex, so we only net 2 vertices. Euler's polyhedron formula can be used as a simple, but not complete, check for this. If Euler's formula spits out a nonsensical answer, we know we messed up.
+        
+        $V + F-E=2$
+        
+        $(V+2)+(F+1)-(E+3)=(V+F-E)+(2+1-3)=V+F-E$
+        
+        We can see that adding two vertices, one face, and three edges maintains the property of all polyhedrons described by Euler's formula. By doing this to all 8 original vertices, we get $3*8=24$ new edges, $2*8=16$ new vertices, and $1*8=8$
+        new faces. Adding this to the original number of edges, vertices, and faces of the cube we get a polyhedron with 36 edges, 24 vertices, and 14 faces. This is known as a \textbf{Tetradecahedron} or more specifically, a \textbf{Truncated Cube} (\textbf{Truncated Hexhedron}).
 
-        \todo{your answer here}
 
 
 
 
     \item Draw a projection of the octahedron onto the plane such that edges only
-        intersect at vertics.  Can every polyhedron be drawn in such a way?
+        intersect at vertices.  Can every polyhedron be drawn in such a way?
 
         \paragraph{Answer}
+        See Figure \ref{graph} for a few drawn projections of a octahedron on the plane such that edges only intersect at vertices. I believe that all convex polyhedron can be drawn this way because the proof by dissection of Euler's polyhedron formula mentioned by Robin Wilson relied on that fact. However, I think that certain polyhedron's that Euler's formula does not sum to 2 on may not have planar projections.
+        
+\begin{figure}
+\caption{Octahedron Projections}
+\centering
+\includegraphics[width=\textwidth,angle=-90]{images/octahedron}
+\label{graph}
+\end{figure}
 
-        \todo{your answer here}
 
 
 \end{enumerate}
