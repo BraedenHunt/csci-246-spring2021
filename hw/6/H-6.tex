@@ -4,9 +4,9 @@
 %% UPDATE these variables:
 \renewcommand{\hwnum}{6}
 \title{Discrete Structures, Homework \hwnum}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
+\author{Braeden Hunt (Tinnittin)}
 \collab{n/a}
-\date{due: 2 April 2021}
+\date{due: 6 April 2021}
 
 \begin{document}
 
@@ -29,12 +29,12 @@ General homework expectations:
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Applications}
+\collab{n/a} \nextprob{Applications}
 % ============================================
 % ============================================
 
 The topics in this class are mathematical in nature, but have strong ties to
-computer science: either for understanding how computers work, why alogithms are
+computer science: either for understanding how computers work, why algorithms are
 correct, or for how to convert real-world data into things that can be analyzed
 using a computer.  Explain how each of the following tie to computer science or
 data science:
@@ -45,37 +45,32 @@ data science:
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        Trees are very useful in computer science to show relationships and to store/search for data efficiently. For example, object oriented programming uses the concepts of parents and children objects, where each child object has a parent object, going all the way back to a base object. This can be represented with a tree. You can see if a object A inherits from another object B if A is in one of B's branches. We can also store a list of data in a tree. By implementing a binary search tree (a tree where each node N has a left and right subtree and every node in the left subtree is less than N and every node that is greater than N is in the right subtree.),  we can quickly search for items within the list.
 
     \item Directed Graph
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+       Directed graphs are very useful for handling asymmetric relationships between two nodes. This means that if $(x, y) \in R$ then $(y, x) \in R \iff x=y$. A real world application of this is street maps. Each location can be a node in a directed graph. Each street can be represented by edges in a directed graph. One way streets are represented as single directed edges, and two way streets are represented by two directed edges pointing opposite of each other. So, computer science apllications such as Google Maps can utilize directed graphs to handle street maps.
 
     \item Equivalence Classes
 
         \paragraph{Answer}
 
-        \todo{your answer here}
-
+        Two objects belong to the same equivalence class if they are equivalent to each other. In order for a relationship $R$ to be an equivalence relationship, three properties must to met. $R$ must be reflexive, meaning that $(a,a) \in R$. $R$ is symmetric, meaning that $(a,b) \in R \implies (b,a) \in R$. And $R$ is transitive, meaning if $(a,b) \in R$ and $(b,c) \in R$ then $(a,c) \in R$. In computer science, we often create our own data structures, objects, and classes, and we need to be able to compare them with each other. For example, in Java, we create an ``a.equals(b)'' method. We need to ensure that this only returns true when $a$ and $b$ belong to the same equivalence class so we need to know the properties that need to be met.
+        
     \item Distance Metrics
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        Distance metrics are ways of defining distances between two different objects. The most common distance metric is Euclidean distance, with the classic $d(P_1, P_2) = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$. This is very useful in physics simulations and computational graphics. Another distance metric is the Manhattan Distance, defined as $d(P_1, P_2) = |x_2-x_1|+|y_2-y_1|$, which can be used to represent the distance between two points on city blocks, so it has ties to mapping, just like directed graphs. A more unique and ``nontraditional'' distance metrics is the Damerau–Levenshtein distance, which can be used to measure the distance between strings of characters. This has applications in auto-correct and spell checking suggestions, as an algorithm can identify that a word is misspelled and then compare it to words in a dictionary. It can then suggest words that are close to the misspelling for the user to choose from.
 
-    \item Distance Metrics
-
-        \paragraph{Answer}
-
-        \todo{your answer here}
 
     \item Injective Function
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        An injective function is a relationship where every x in the domain maps to a unique y in the co-domain. This means that no two x values maps to the same y value. An example of this in computer science is database tables. A table is full of rows (records) and columns (attributes). Each row is unique and has it's own unique primary key. In this application, the set of all primary keys is the domain, and the set of all rows (the table) is the co-domain. Since each row has it's own unique primary key, the function that maps primary keys to rows is injective. This allows for rows to be referred to by just their primary keys, reducing redundant data, and improving both computational and memory efficiency.
 
 
 \end{enumerate}
@@ -100,14 +95,86 @@ return one of the cocktails that minimizes this distance.
         what the distance function is, including the domain and codomain).
 
         \paragraph{Answer}
-
-        \todo{your answer here}
-
+        $D_{cocktail}(A, B) = max(|\{ i \in A \mid i \notin B\}|, |\{ i \in B \mid i \notin A\}|)$
+       
+       $D_{cocktail}(A, B)\colon I\times I\to \mathbb{Z}^{nonneg}$ where $A, B \subseteq I$ 
+       and $I$ is defined as the set of all ingredients. This means that the domain of $D_{cocktail}$ is the Cartesian product $I\times I$ and the codomain is $\mathbb{Z}^{nonneg}$.
+       
+       In order to prove that this is a metric, we need to show three things:
+       \begin{enumerate}
+       
+       \item $D_{cocktail}(A, B) \geq 0$
+       
+       Since $D_{cocktail}(A, B)$ is defined as the max between the size of two sets, and the size of all sets is nonnegative, we know $D_{cocktail}(A, B)$ is greater than or equal to zero.
+       
+       \item $D_{cocktail}(A, B) = D_{cocktail}(B, A)$
+       
+       We need to show that  $D_{cocktail}(A, B) = max(|\{ i \in B \mid i \notin A\}|, |\{ i \in A \mid i \notin B\}|) = D_{cocktail}(B, A)$
+       
+       We start with the definition:  $D_{cocktail}(A, B) =max(|\{ i \in A \mid i \notin B\}|, |\{ i \in B \mid i \notin A\}|)$
+       
+       By the symmetric property of the $max()$ function, we can switch the order of the two parameters.
+       
+       Doing so gives us:  $D_{cocktail}(A, B) = max(|\{ i \in B \mid i \notin A\}|, |\{ i \in A \mid i \notin B\}|)$ 
+       
+       Since $max(|\{ i \in B \mid i \notin A\}|, |\{ i \in A \mid i \notin B\}|) = D_{cocktail}(B, A)$, we have shown what was to be shown.
+       
+       \item $D_{cocktail}(A, B) \leq D_{cocktail}(A, C) + D_{cocktail}(C, B)$
+       
+       Let's break  $D_{cocktail}(A, B)$ down into two cases.
+       \begin{enumerate}
+       \item Case 1: $|A| \leq |B|$:
+       
+       Then $D_{cocktail}(A, B) = |\{ i \in B \mid i \notin A\}|$.
+       
+       $D_{cocktail}(A, C) = |\{ i \in C \mid i \notin A\}|$.
+       
+       $D_{cocktail}(C, B) = |\{ i \in B \mid i \notin C\}|$.
+       
+	$D_{cocktail}(A, C) + D_{cocktail}(C, B) = |\{ i \in C \mid i \notin A\}| + |\{ i \in B \mid i \notin C\}|$
+	
+	$= |\{ i \in C \mid i \notin A \land i \notin B\}| +  |\{ i \in C \mid i \notin A \land i \in B\}| + |\{ i \in B \mid i \notin C \land  \notin A\}| + |\{ i \in B \mid i \notin C \land  \in A\}|$ 
+	\qquad by splitting sets into disjoint sets that sum together to the original.
+       
+       We can rewrite $|\{ i \in C \mid i \notin A \land i \in B\}|$ as $|\{ i \in B \mid i \notin A \land i \in C\}|$.
+       
+       We can then combine that term with $ |\{ i \in B \mid i \notin C \land  \notin A\}|$ to get $ |\{ i \in B \mid i \notin A\}|$ which equals $D_{cocktail}(A, B)$.
+       
+       This gives us $D_{cocktail}(A, C) + D_{cocktail}(C, B) = D_{cocktail}(A, B) + |\{ i \in B \mid i \notin C \land  \in A\}| + |\{ i \in C \mid i \notin A \land i \notin B\}|$.
+       
+       Since $D_{cocktail}(A, C) + D_{cocktail}(C, B)$ is equal to $D_{cocktail}(A, B) + x$ where x is some nonnegative integer, we know  $D_{cocktail}(A, B) \leq D_{cocktail}(A, C) + D_{cocktail}(C, B)$
+       
+        \item Case 2: $|B| \leq |A|$:
+       
+       Then $D_{cocktail}(A, B) = |\{ i \in A \mid i \notin B\}|$.
+       
+       $D_{cocktail}(A, C) = |\{ i \in C \mid i \notin A\}|$.
+       
+       $D_{cocktail}(C, B) = |\{ i \in B \mid i \notin C\}|$.
+       
+	$D_{cocktail}(A, C) + D_{cocktail}(C, B) = |\{ i \in A \mid i \notin C\}| + |\{ i \in C \mid i \notin B\}|$
+	
+	$= |\{ i \in C \mid i \notin A \land i \notin B\}| +  |\{ i \in C \mid i \notin B \land i \in A\}| + |\{ i \in A \mid i \notin C \land  \notin B\}| + |\{ i \in A \mid i \notin C \land  \in B\}|$ 
+	\qquad by splitting sets into disjoint sets that sum together to the original.
+       
+       We can rewrite $|\{ i \in C \mid i \notin B \land i \in A\}|$ as $|\{ i \in A \mid i \notin B \land i \in C\}|$.
+       
+       We can then combine that term with $ |\{ i \in A \mid i \notin C \land  \notin B\}|$ to get $ |\{ i \in A \mid i \notin B\}|$ which equals $D_{cocktail}(A, B)$.
+       
+       This gives us $D_{cocktail}(A, C) + D_{cocktail}(C, B) = D_{cocktail}(A, B) + |\{ i \in A \mid i \notin C \land  \in B\}| + |\{ i \in C \mid i \notin B \land i \notin A\}|$.
+       
+       Since $D_{cocktail}(A, C) + D_{cocktail}(C, B)$ is equal to $D_{cocktail}(A, B) + x$ where $x$ is some nonnegative integer, we know  $D_{cocktail}(A, B) \leq D_{cocktail}(A, C) + D_{cocktail}(C, B)$
+       
+       \end{enumerate}
+       \end{enumerate}
+        
     \item Is this a good distance to use for your application?  Why or why not?
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        This is not a good distance metric because it does not take into account other factors that affect taste. The biggest one is the quantity of each ingredient. 
+        Since this metric doesn't include that in the measure, Cocktail A with 10 x ingredient and 1 y ingredient would be equal to Cocktail B with 10 y ingredient and 1 x ingredient. These two would not taste at all similar, 
+        but this distance metric would say they should taste exactly the same.
 
 \end{enumerate}
 
