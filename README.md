@@ -1,6 +1,6 @@
 # CSCI 246: Discrete Structures, Spring 2021 #
 
-This repository is for class materials for Discrete Structures, Fall 2021, taught by Prof. Fasy.
+This repository is for class materials for Discrete Structures, Spring 2021, taught by Prof. Fasy.
 
 Course Catalog Description: This course covers logic, discrete probability,
 recurrence relations, Boolean algebra, sets, relations, counting, functions,
@@ -350,10 +350,31 @@ hear or smell you.
 - Miro Links: [M](https://miro.com/app/board/o9J_lPAKI28=/),
     [Mb](https://miro.com/app/board/o9J_lPAKI2g=/),
     [W](https://miro.com/app/board/o9J_lOm8zv0=/),
-    [Wb](https://miro.com/app/board/o9J_lOm8zos=/)
+    [Wb](https://miro.com/app/board/o9J_lOm8zos=/),
+    [F](https://miro.com/app/board/o9J_lOG_9Yw=/),
+    [Fb](https://miro.com/app/board/o9J_lOG_9bY=/)
+
+### Week 11 (22 March 2021)
+- Topics: Relations
+- Reading: Chapter 8
+- Miro Links: [M](https://miro.com/app/board/o9J_lOYSHWw=/),
+    [Mb](https://miro.com/app/board/o9J_lOYSHXw=/),
+    [W](https://miro.com/app/board/o9J_lN5CHpQ=/),
+    [Wb](https://miro.com/app/board/o9J_lN5CHq8=/),
+    [F](https://miro.com/app/board/o9J_lNbk66A=/),
+    [Fb](https://miro.com/app/board/o9J_lNbk67M=/)
+
+### Week 12
+
+- Topics: Probability 
+- Reading: Chapter 9
+- Miro Links: [M](https://miro.com/app/board/o9J_lMtHemg=/),
+    [Mb](https://miro.com/app/board/o9J_lMtHen8=/),
+    [W](https://miro.com/app/board/o9J_lMGNUN8=/),
+    [Wb](https://miro.com/app/board/o9J_lMGNUOY=/)
 
 --- 
-
+)
 This syllabus was created, using wording from previous courses that I have
 taught, as well as David Millman's Spring 2018 Graphics course.  Thanks, Dr.
 Millman!
