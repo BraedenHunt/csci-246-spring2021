@@ -181,7 +181,7 @@ return one of the cocktails that minimizes this distance.
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Loop Invariant}
+\collab{n/a} \nextprob{Loop Invariant}
 % ============================================
 % ============================================
 
@@ -196,27 +196,58 @@ turn helps to prove that an algorithm is correct).
         variable name \textsc{curguess} to store the current guess of the second
         largest value, and \textsc{curmax} to store the current max of $A$.
 
-        \paragraph{Answer}
+        \paragraph{Answer} Algorithm:
 
-        \todo{your answer here}
+        secondMax(array A)
+        
+        \qquad if (A[1] > A[2])
+        
+        \qquad \qquad curmax = A[1]
+       
+        \qquad \qquad curguess = A[2]
+        
+        \qquad else 
+       
+        \qquad \qquad curmax = A[2]
+       
+        \qquad \qquad curguess = A[1]
+        
+        \qquad i = 3
+       
+        \qquad while i $\leq$ A.length
+       
+        \qquad \qquad if A[i] $>$ curmax
+       
+        \qquad \qquad \qquad curguess = curmax
+       
+        \qquad \qquad \qquad curmax = A[i]
+        
+        \qquad \qquad else if A[i] $>$ curguess and curmax $>$ A[i]
+        
+        \qquad \qquad \qquad curguess = A[i]
+        
+        \qquad \qquad i = i + 1
+        
+        \qquad return curguess
+        
 
     \item What is the postcondition of the loop? (Call this statement $Q$).
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        $Q\colon$ the value returned is the second greatest in the array.
 
     \item What is the precondition of the loop? (Call this statement $P$).
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+       $P\colon$ A is an array of real values, i = 3, curmax equals the max of the first two elements of A, and curguess equals the minimum of the first two elements of A
 
     \item What is the loop guard of the loop? (Call this statement $G$).
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        $G\colon i \leq A.length$
 
     \item Prove that the loop invariant is when entering the $i^\text{th}$
         iteration of the loop is, ``the variable \textsc{curguess} stores
@@ -225,16 +256,41 @@ turn helps to prove that an algorithm is correct).
         and \textsc{curmax} stores the largest value of $A[1,2,\ldots, i]$.
 
         \paragraph{Answer}
+\begin{enumerate}
+	\item Basis Property: $P$ is true.
+	
+	A is an array of real values is true (given by the problem). i=3 because we set it to that. curmax is the largest value in the first two elements of the array and curguess is the second greatest value (also the minimum value) of the array as it is the only other value besides curmax.
+	
+	\item Inductive Property: If $G \land I(k)$ is true before a loop iteration (where $k \geq 0$), then $I(k+1)$ is true after the loop iteration.
+	
+	We assume that $G \land I(k)$ is true. That means $i = k+3$, curmax is eqaul to the greatest value in A[1, 2, ..., ($i-1$)], and curguess holds the second greatest value in that same range.
+	
+	The $k+1$ iteration of the loop starts by comparing A[i] to curmax and curguess. There are three possible cases:
+	
+	\begin{enumerate}
+	\item A[i] is the max of A[1, 2, ..., i]:
+	
+	A[i] is greater than curmax, so the first if-statement block executes. This means curmax is now the second largest value so curguess is updated to that value. 
+	The new max is A[i] so curmax is set to that value. The loop then increments i so the next iteration is $I(i+1)$.
+	
+	\item A[i] is the second greatest value in A[1, 2, ..., i]
+	
+	A[i] is less than the curmax, but is greater than the curgess, so the second if-statement block executes. This means that curguess is updated to A[i]. 
+	Curmax does not need to be updated as it is still the max of the first i elements of A. The loop then increments i so the next iteration is $I(i+1)$.
+	
+	\item A[i] is not the maximum or second greatest value of A[1, 2, ..., i].
+	
+	Curguess and curmax do not get updated as neither if-statement is triggered.  The loop then increments i so the next iteration is $I(i+1)$.
+\end{enumerate}
 
-        \todo{your answer here}
-
+	In all possible cases, the loop invariant holds, as was to be shown.
 \end{enumerate}
 
 
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Four Colors Suffice}
+\collab{n/a} \nextprob{Four Colors Suffice}
 % ============================================
 % ============================================
 
@@ -246,7 +302,7 @@ Read Chapters $9$ and $10$ of \emph{Four Colors Suffice}.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        A part of a map, or submap, that cannot exist within a minimal criminal. This means that if a map has a reducible configuration within it, it can be ruled out for needing to be checked to see if it can be colored. This allowed Appel and Haken to speed up their computer program.
 
 
 
@@ -255,7 +311,9 @@ Read Chapters $9$ and $10$ of \emph{Four Colors Suffice}.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        Kenneth Appel and Wolfgang Haken were the first to solve the problem. They used computers to construct a unavoidable set of reducible configurations. 
+        This means that every map must have at least one of the reducible configurations within it. Because every map contains an reducible configuration, then every map can be
+        colored with four colors.
 
 
 
@@ -264,8 +322,14 @@ Read Chapters $9$ and $10$ of \emph{Four Colors Suffice}.
         to color.
 
         \paragraph{Answer}
+        See Figure \ref{mobius}
 
-        \todo{your answer here}
+        \begin{figure}
+\caption{Mobius Strip map that requires five or more colors}
+\centering
+\includegraphics[width=\textwidth]{images/mobius}
+\label{mobius}
+\end{figure}
 
 
 \end{enumerate}
