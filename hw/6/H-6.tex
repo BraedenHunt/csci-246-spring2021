@@ -95,78 +95,88 @@ return one of the cocktails that minimizes this distance.
         what the distance function is, including the domain and codomain).
 
         \paragraph{Answer}
-        $D_{cocktail}(A, B) = max(|\{ i \in A \mid i \notin B\}|, |\{ i \in B \mid i \notin A\}|)$
+        $D(A, B) = |\{x \in A \mid x \notin B\}| + |\{x \in B \mid x \notin A\}|$
        
-       $D_{cocktail}(A, B)\colon I\times I\to \mathbb{Z}^{nonneg}$ where $A, B \subseteq I$ 
+       $D(A, B)\colon I\times I\to \mathbb{Z}^{nonneg}$ where $A, B \subseteq I$ 
        and $I$ is defined as the set of all ingredients. This means that the domain of $D_{cocktail}$ is the Cartesian product $I\times I$ and the codomain is $\mathbb{Z}^{nonneg}$.
        
        In order to prove that this is a metric, we need to show three things:
        \begin{enumerate}
        
-       \item $D_{cocktail}(A, B) \geq 0$
+       \item $D(A, B) = 0 \iff A=B$
        
-       Since $D_{cocktail}(A, B)$ is defined as the max between the size of two sets, and the size of all sets is nonnegative, we know $D_{cocktail}(A, B)$ is greater than or equal to zero.
+       We first need to show that $D(A,B) = 0 \implies A=B$
        
-       \item $D_{cocktail}(A, B) = D_{cocktail}(B, A)$
+       Suppose $D(A,B) = 0$:
        
-       We need to show that  $D_{cocktail}(A, B) = max(|\{ i \in B \mid i \notin A\}|, |\{ i \in A \mid i \notin B\}|) = D_{cocktail}(B, A)$
+       $0 = |\{x \in A \mid x \notin B\}| + |\{x \in B \mid x \notin A\}|$
        
-       We start with the definition:  $D_{cocktail}(A, B) =max(|\{ i \in A \mid i \notin B\}|, |\{ i \in B \mid i \notin A\}|)$
+       Since the size of any set is nonnegative and the only way for the sum of two nonnegative numbers to be zero is if they are both zero. Therefore, $0 = |\{x \in A \mid x \notin B\}|$. This means that there does not exist an element in $A$ that isn't in $B$. The contrapositive is that for all elements $x \in A, x \in B$. This is the definition of a subset, meaning $A \subseteq B$
        
-       By the symmetric property of the $max()$ function, we can switch the order of the two parameters.
+       Since $0 = |\{x \in B \mid x \notin A\}|$, the same can be said that $B \subseteq A$. Since $A$ and $B$ are subsets of each other, they are equal, as was to be shown.
        
-       Doing so gives us:  $D_{cocktail}(A, B) = max(|\{ i \in B \mid i \notin A\}|, |\{ i \in A \mid i \notin B\}|)$ 
+       We also need to show that $A=B \implies D(A,B) = 0$
        
-       Since $max(|\{ i \in B \mid i \notin A\}|, |\{ i \in A \mid i \notin B\}|) = D_{cocktail}(B, A)$, we have shown what was to be shown.
+       Suppose $A=B$. Then $D(A,B) = D(A,A)$ by substitution.
        
-       \item $D_{cocktail}(A, B) \leq D_{cocktail}(A, C) + D_{cocktail}(C, B)$
+       Then we are left with $D(A,A) = |\{x \in A \mid x \notin A\}| + |\{x \in A \mid x \notin A\}|$
        
-       Let's break  $D_{cocktail}(A, B)$ down into two cases.
-       \begin{enumerate}
-       \item Case 1: $|A| \leq |B|$:
+       $D(A,A) = 2 \times |\{x \in A \mid x \notin A\}|$ by combining like terms
        
-       Then $D_{cocktail}(A, B) = |\{ i \in B \mid i \notin A\}|$.
+       $D(A,A) = 2 \times |\O|$ since no $x$ can satisfy the conditions.
        
-       $D_{cocktail}(A, C) = |\{ i \in C \mid i \notin A\}|$.
+       $D(A,A) = 0$ as the size of an empty set is 0.
+       $D(A,A) = 0 = D(A,B)$ as was to be shown.
        
-       $D_{cocktail}(C, B) = |\{ i \in B \mid i \notin C\}|$.
+       Since $A=B \implies D(A,B) = 0$ and $D(A,B) = 0 \implies A=B$, then $D(A, B) = 0 \iff A=B$, as was to be shown.
        
-	$D_{cocktail}(A, C) + D_{cocktail}(C, B) = |\{ i \in C \mid i \notin A\}| + |\{ i \in B \mid i \notin C\}|$
+       \item $D(A,B) = D(B,A)$
+       
+       We start with the definition of $D(A,B)$:
+       
+       $D(A,B) = |\{x \in A \mid x \notin B\}| + |\{x \in B \mid x \notin A\}|$
+       
+       $D(A,B) = |\{x \in B \mid x \notin A\}| + |\{x \in A \mid x \notin B\}|$ by the communicative property of addition
+       
+      $D(B,A) = |\{x \in B \mid x \notin A\}| + |\{x \in A \mid x \notin B\}|$ by the definition of $D(B,A)$.
+      
+      As was to be shown.
+       
+       \item $D(A,B) \leq D(A,C) + D(C,B)$
+       
+       Let us start with the definition of $D(A,C) + D(C,B)$:
+       
+       $D(A,C) + D(C,B) =  |\{x \in A | x \notin C \}| + |\{x \in C | x \notin A \}|
+       					+  |\{x \in C | x \notin B \}| + |\{x \in B | x \notin C \}|$
+       					
+	We can split each of term into two disjoint sets that sum together to the original term. This is equal to:
 	
-	$= |\{ i \in C \mid i \notin A \land i \notin B\}| +  |\{ i \in C \mid i \notin A \land i \in B\}| + |\{ i \in B \mid i \notin C \land  \notin A\}| + |\{ i \in B \mid i \notin C \land  \in A\}|$ 
-	\qquad by splitting sets into disjoint sets that sum together to the original.
+	$D(A,C) + D(C,B) = \notag\\
+	|\{x \in A | x \notin C \land x \notin B \}| + |\{x \in A | x \notin C \land x \in B \}| \notag\\
+	+ |\{x \in C | x \notin A \land x \notin B \}| + |\{x \in C | x \notin A \land x \in B \}| \notag\\
++ |\{x \in C | x \notin B \land x \notin A \}| + |\{x \in C | x \notin B \land x \in A \}| \notag\\
++|\{x \in B | x \notin C \land x \notin A \}| + |\{x \in B | x \notin C \land x \in A \}|$
        
-       We can rewrite $|\{ i \in C \mid i \notin A \land i \in B\}|$ as $|\{ i \in B \mid i \notin A \land i \in C\}|$.
+       We can rewrite the sixth term as $|\{x \in A| x \notin B\land x \in C\}|$.
        
-       We can then combine that term with $ |\{ i \in B \mid i \notin C \land  \notin A\}|$ to get $ |\{ i \in B \mid i \notin A\}|$ which equals $D_{cocktail}(A, B)$.
+       We can then combine that with the first term to get (we can do this because they are disjoint):
        
-       This gives us $D_{cocktail}(A, C) + D_{cocktail}(C, B) = D_{cocktail}(A, B) + |\{ i \in B \mid i \notin C \land  \in A\}| + |\{ i \in C \mid i \notin A \land i \notin B\}|$.
+       $|\{x \in A | x \notin C \land x \notin B \} + |\{x \in A| x \notin B\land x \in C\}| = |\{x \in A| x \notin B\}|$
        
-       Since $D_{cocktail}(A, C) + D_{cocktail}(C, B)$ is equal to $D_{cocktail}(A, B) + x$ where x is some nonnegative integer, we know  $D_{cocktail}(A, B) \leq D_{cocktail}(A, C) + D_{cocktail}(C, B)$
+       Doing a similar process with rewriting the fourth term and combining it with the seventh, we get:
        
-        \item Case 2: $|B| \leq |A|$:
+       $|\{x \in B | x \notin A \land x \in C \}| + |\{x \in C | x \notin C \land x \notin A \}| = |\{x \in A| x \notin B\}\|$
        
-       Then $D_{cocktail}(A, B) = |\{ i \in A \mid i \notin B\}|$.
+       We can then combine those two results:
        
-       $D_{cocktail}(A, C) = |\{ i \in C \mid i \notin A\}|$.
+       $|\{x \in A| x \notin B\}\ + |\{x \in A| x \notin B\}\| = D(A,B)$ by the definition of $D(A,B)$.
        
-       $D_{cocktail}(C, B) = |\{ i \in B \mid i \notin C\}|$.
+       We are left with $D(A,C) + D(C,B) = D(A,B) + $[terms 2, 3, 5, 8].
        
-	$D_{cocktail}(A, C) + D_{cocktail}(C, B) = |\{ i \in A \mid i \notin C\}| + |\{ i \in C \mid i \notin B\}|$
-	
-	$= |\{ i \in C \mid i \notin A \land i \notin B\}| +  |\{ i \in C \mid i \notin B \land i \in A\}| + |\{ i \in A \mid i \notin C \land  \notin B\}| + |\{ i \in A \mid i \notin C \land  \in B\}|$ 
-	\qquad by splitting sets into disjoint sets that sum together to the original.
-       
-       We can rewrite $|\{ i \in C \mid i \notin B \land i \in A\}|$ as $|\{ i \in A \mid i \notin B \land i \in C\}|$.
-       
-       We can then combine that term with $ |\{ i \in A \mid i \notin C \land  \notin B\}|$ to get $ |\{ i \in A \mid i \notin B\}|$ which equals $D_{cocktail}(A, B)$.
-       
-       This gives us $D_{cocktail}(A, C) + D_{cocktail}(C, B) = D_{cocktail}(A, B) + |\{ i \in A \mid i \notin C \land  \in B\}| + |\{ i \in C \mid i \notin B \land i \notin A\}|$.
-       
-       Since $D_{cocktail}(A, C) + D_{cocktail}(C, B)$ is equal to $D_{cocktail}(A, B) + x$ where $x$ is some nonnegative integer, we know  $D_{cocktail}(A, B) \leq D_{cocktail}(A, C) + D_{cocktail}(C, B)$
-       
+       Since all the terms are positive, we know that the $D(A,C) + D(C,B)$ is equal some number greater than or equal to $D(A,B)$, as was to be shown.
        \end{enumerate}
-       \end{enumerate}
+       
+       Since all the properties of distance metrics have been shown, this is a valid metric.
         
     \item Is this a good distance to use for your application?  Why or why not?
 
