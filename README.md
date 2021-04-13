@@ -380,7 +380,16 @@ hear or smell you.
 - Miro Links: [M](https://miro.com/app/board/o9J_lLuQ110=/),
   [Mb](https://miro.com/app/board/o9J_lLuQ1qA=/),
   [W](https://miro.com/app/board/o9J_lLKju6Y=/),
-  [Wb](https://miro.com/app/board/o9J_lLKju5A=/)
+  [Wb](https://miro.com/app/board/o9J_lLKju5A=/),
+  [F](https://miro.com/app/board/o9J_lKlKZn0=/),
+  [Fb](https://miro.com/app/board/o9J_lKlKZgQ=/)
+
+### Week 14
+
+- Topics: Probability and Graphs
+- Reading: Chapter 9 and 10
+- Miro Links: [M](https://miro.com/app/board/o9J_lK7APus=/),
+    [Mb](https://miro.com/app/board/o9J_lK7APow=/)
 
 --- 
 
