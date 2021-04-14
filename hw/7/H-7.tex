@@ -37,13 +37,15 @@ Often, in order to transform real-world problems into ones that can be analyzed
 on computers, you need to design a representation of the data that helps
 illuminate the patterns.  One common representation is a graph.  Suppose you own
 a movie store.  You have records of every movie purchased, how much it was
-purchsed for, and who purchased it.  Describe two different graphs that you can
+purchased for, and who purchased it.  Describe two different graphs that you can
 create to represent this data.  Please make sure that the nodes in the two
 graphs represent different things.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+One way to represent this situation is to use a weighted bipartite graph. All the nodes on one side represent people, and the nodes on the other side represent movies. The weight of each edge is the purchase price. The graph may have parallel edges if customers can buy the same movie multiple times.
+
+Another way to do this is to switch the people and the costs. This would result in a set of disconnected subgraphs, where each movie has it's own node, connected to other nodes that indicate the purchase price. Each edge has an associated value for the same of the person who bought it. The graph may have parallel edges as multiple people may have bought the same movie for the same price. The graph may also not be disconnected if you don't allow for nodes to have the same values.
 
 
 % ============================================
@@ -129,7 +131,14 @@ Read Chapter $11$ of \emph{Four Colors Suffice}.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+       After Appel and Haken proved the Four Color Theorem, there was quite a bit of debate around what a proof is,
+       and what roles a computer can play in proofs. Some argued that computers should have no role in mathematics,
+       as it creates ugly solutions to problems, may turn mathematics into an empirical field of study, and there is no possible
+       way for someone to check over all the outputs for computer proofs, making it such that no one could read and check the whole 
+       proof. Others argued that entrusting computers with solving certain parts of problems, like creating an unavoidable set of reducible configurations
+       is less error prone than doing the same by hand. There is no way that someone could write hundreds of pages of a mathematical proof by hand 
+       without error, so why hold a computer to a higher standard than a mathematician? I side with the use of computers being an important tool in mathematics,
+       even if it does lead to some uglier proofs, they are true nonetheless. 
 
 
     \item Choose one concept that was described in both FCS and in Epp.
@@ -137,7 +146,7 @@ Read Chapter $11$ of \emph{Four Colors Suffice}.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        FCS and Epp both covered the concept of Hamiltonian cycles. They both define them the same way, except Epp refers to them as ``circuits'' instead of cycles, but those are synonyms. They both use the definition that a Hamiltonian cycle is a simple cycle that includes every vertex in a graph without repeating any vertices (except the first and last). They also both discuss the history of the concept by pointing out Hamilton's puzzle for traversing a dodecahedron world in such a way. But FCS includes a bit more trivia with it, talking about the success of the game and including a document featuring Hamilton's game. FCS also discusses the true inventor of this concept, Thomas Kirkman, who applied this concept to more polyhedron than just the dodecahedron like Hamilton had done. Epp also discussed the differences between an Hamiltonian cycle and a Euler cycle, which is something that FCS did not do when first introducing the concept.
 
 \end{enumerate}
 
