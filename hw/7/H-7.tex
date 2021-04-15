@@ -145,7 +145,7 @@ Recall the binary search algorithm.
             \State $start = 0$
             \State$ end = |A|-1$
                \For{$i = 0, i <= \log_2 |A|, i++$}\Comment{Iterate up to log(n) times}
-                	\State $mid = (start + end) / 2$
+                	\State $mid = (start + end) // 2$\Comment{Integer Division}
                 	\If{$A[mid] == value$}
             			\State \textbf{return} true
 				\ElsIf{$A[mid] > value$}\Comment{If value is above mid,}
@@ -163,17 +163,21 @@ Recall the binary search algorithm.
         \paragraph{Answer} My algorithm for binary search using a while loop is given in \algref{whileloop}.
 
          \begin{algorithm}
-            \caption{\textsc{BinarySearchWhile}$(A)$}\label{alg:whileloop}
+            \caption{\textsc{BinarySearchWhile}$(A, value)$}\label{alg:whileloop}
             \begin{algorithmic}
-                \State for each
-                
-                asdfasf
-                
-                
-                \State afas
-                asfdasdf
-                
-                aadf
+               \State $start = 0$
+            \State$ end = |A|-1$
+               \While{$start \leq end$}\Comment{Loop until the start and end switch}
+                	\State $mid = (start + end) // 2$\Comment{Integer Division}
+                	\If{$A[mid] == value$}
+            			\State \textbf{return} true
+				\ElsIf{$A[mid] > value$}\Comment{If value is above mid,}
+					\State $start = mid + 1$\Comment{reduce the search space to A[(mid+1)...end]}
+				\Else\Comment{If value is below mid,}
+					\State $end = mid-1$\Comment{reduce the search space to A[start...(mid-1)]}
+      			\EndIf
+                \EndWhile
+                \State \textbf{return} false\Comment{If value wasn't found, return false}
             \end{algorithmic}
         \end{algorithm}
 
@@ -183,9 +187,18 @@ Recall the binary search algorithm.
         \paragraph{Answer} My algorithm for binary search using recursion is given in \algref{recursive}.
 
          \begin{algorithm}
-            \caption{\textsc{BinarySearchRecursive}$(A)$}\label{alg:recursive}
+            \caption{\textsc{BinarySearchRecursive}$(A, value)$}\label{alg:recursive}
             \begin{algorithmic}
-                \State \todo{pseudocode here}
+                \State $mid = (|A|-1)//2$\Comment{Integer Division}
+                \If{$A[mid] == value$}
+            		\State \textbf{return} true
+			\ElsIf{$start == end$}\Comment{If the start and end are equal but aren't}
+				\State \textbf{return} false\Comment{equal to the value, then the value isn't in A} 
+			\ElsIf{$A[mid] > value$}\Comment{If the value is above mid}
+				\State \textbf{return} $BinarySearchRecursive(A[(mid+1)\ldots], value)$\Comment{Recursively search A[mid+1 through end]}
+			\Else\Comment{If the value is below mid}
+				\State \textbf{return} $BinarySearchRecursive(A[\ldots(mid-1)], value)$\Comment{Recursively search A[0 through mid-1]}
+			\EndIf
             \end{algorithmic}
         \end{algorithm}
 
@@ -195,7 +208,12 @@ Recall the binary search algorithm.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        The loop invariant is something that is true before the algorithm runs and before and after each iteration of the algorithm. The loop invariant of BinarySearchWhile is:
+        
+        $A[start] <= value <= A[end]$
+        
+        Each operation we do is to reduce the search space while ensuring that that property holds true. That is why we can increase 
+        $start$ up to $mid+1$ if $A[mid] < value$ or move $end$ down to $mid-1$ if $A[mid] > value$.
 \end{enumerate}
 
 % ============================================
@@ -233,7 +251,7 @@ Read Chapter $11$ of \emph{Four Colors Suffice}.
 
 % ============================================
 % ============================================
-\collab{\todo{}}
+\collab{n/a}
 \nextprob{Thomas Bayes}
 % ============================================
 % ============================================
