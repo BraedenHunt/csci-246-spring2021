@@ -4,7 +4,7 @@
 %% UPDATE these variables:
 \renewcommand{\hwnum}{7}
 \title{Discrete Structures, Homework \hwnum}
-\author{\todo{Your Name Here} (\todo{your discord handle here})}
+\author{Braeden Hunt (Tinnittin)}
 \collab{n/a}
 \date{due: 16 April 2021}
 
@@ -29,7 +29,7 @@ General homework expectations:
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Graphs}
+\collab{n/a} \nextprob{Graphs}
 % ============================================
 % ============================================
 
@@ -45,12 +45,12 @@ graphs represent different things.
 
 One way to represent this situation is to use a weighted bipartite graph. All the nodes on one side represent people, and the nodes on the other side represent movies. The weight of each edge is the purchase price. The graph may have parallel edges if customers can buy the same movie multiple times.
 
-Another way to do this is to switch the people and the costs. This would result in a set of disconnected subgraphs, where each movie has it's own node, connected to other nodes that indicate the purchase price. Each edge has an associated value for the same of the person who bought it. The graph may have parallel edges as multiple people may have bought the same movie for the same price. The graph may also not be disconnected if you don't allow for nodes to have the same values.
+Another way to do this is to switch the people and the costs. This would result in a set of disconnected subgraphs, where each movie has it's own node, connected to other nodes that indicate the purchase price. Each edge has an associated value for the same of the person who bought it. The graph may have parallel edges as multiple people may have bought the same movie for the same price. 
 
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Equivalence Class}
+\collab{n/a} \nextprob{Equivalence Class}
 % ============================================
 % ============================================
 
@@ -64,19 +64,70 @@ connected components.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        Three properties need to be met in order for a relation to be an equivalence relation, reflexivity, symmetry, and transitivity.
+        For the following proof, let $C(a)$ represent the number of connected components of some graph $a$. That allows us to define $R$ as $(g, h) \in R \iff C(g) = C(h)$.
+        
+        \begin{enumerate}
+        \item Reflexivity: $(g, g) \in R$
+        
+        In order for $(g, g) \in R$, then $C(g)$ has to equal $C(g)$ by definition of $R$.
+         
+        $C(g) = C(g)$ is true by the reflexive property of equals.
+        
+        Therefore, $R$ is a reflexive relation.
+        
+        \item Symmetry: $(g, h) \in R \iff (h, g) \in R$
+        
+        We need to show two things:
+        \begin{enumerate}
+        \item $(g, h) \in R \implies (h, g) \in R$
+        
+        Suppose that $(g, h) \in R$. We need to show that $(h, g) \in R$.
+        
+        We know that $C(g) = C(h)$ by the definition of $R$.
+        
+        We can rearrange this by the symmetric property of equals to get $C(h) = C(g)$
+       
+       Which means $(h, g) \in R$ as was to be shown.
+       
+       \item $(h, g) \in R \implies (g, h) \in R$
+       
+       Suppose that $(h, g) \in R$. We need to show that $(g, h) \in R$.
+        
+        We know that $C(h) = C(g)$ by the definition of $R$.
+        
+        We can rearrange this by the symmetric property of equals to get $C(g) = C(h)$
+       
+       Which means $(g, h) \in R$ as was to be shown.
+        \end{enumerate}
+        Since $(g, h) \in R \implies (h, g) \in R$ and $(h, g) \in R \implies (g, h) \in R$, then $(g, h) \in R \iff (h, g) \in R$ as was to be shown.
+        
+        \item Transitivity: If $(g, h) \in R$ and $(h, i) \in R$, then $(g, i) \in R$
+        
+        Suppose $(g, h), (h, i) \in R$
+        
+        Then $C(g) = C(h)$ and $C(h) = C(i)$ by the definition of $R$.
+        
+        We can substitute $C(i)$ for $C(h)$ in the first equation as $C(h) = C(i)$.
+        
+        This leaves us with $C(g) = C(i)$, meaning $(g, i) \in R$, as was to be shown.
+        \end{enumerate}
+        As $R$ satisfies all properties of equivalence relations, it is an equivalence relation.
 
     \item Describe a scenario where you might use this equivalence relation.
 
         \paragraph{Answer}
 
-        \todo{your answer here}
+        If you were a sociologist comparing social groups across high schools, it would be important to know the 
+        number of social groups in each school. You can represent a social network as graph with students being the nodes
+        and close friendships being the edges. Each component represents a social group. You can then compare the number of
+        social groups across schools using $R$.
 
 \end{enumerate}
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Pseudocode}
+\collab{n/a} \nextprob{Pseudocode}
 % ============================================
 % ============================================
 
@@ -89,24 +140,54 @@ Recall the binary search algorithm.
         \paragraph{Answer} My algorithm for binary search using a for loop is given in \algref{forloop}.
 
         \begin{algorithm}
-            \caption{\textsc{BinarySearchFor}$(A)$}\label{alg:forloop}
+            \caption{\textsc{BinarySearchFor}$(A, value)$}\label{alg:forloop}
             \begin{algorithmic}
-                \State \todo{pseudocode here}
+            \State $start = 0$
+            \State$ end = |A|-1$
+               \For{$i = 0, i <= \log_2 |A|, i++$}\Comment{Iterate up to log(n) times}
+                	\State $mid = (start + end) / 2$
+                	\If{$A[mid] == value$}
+            			\State \textbf{return} true
+				\ElsIf{$A[mid] > value$}\Comment{If value is above mid,}
+					\State $start = mid + 1$\Comment{reduce the search space to A[(mid+1)...end]}
+				\Else\Comment{If value is below mid,}
+					\State $end = mid-1$\Comment{reduce the search space to A[start...(mid-1)]}
+      			\EndIf
+                \EndFor
+                \State \textbf{return} false\Comment{If value wasn't found, return false}
             \end{algorithmic}
         \end{algorithm}
 
     \item Using the algorithm/algorithmic environment, give pseudocode using a while loop.
 
-        \paragraph{Answer}
+        \paragraph{Answer} My algorithm for binary search using a while loop is given in \algref{whileloop}.
 
-        \todo{your answer here}
+         \begin{algorithm}
+            \caption{\textsc{BinarySearchWhile}$(A)$}\label{alg:whileloop}
+            \begin{algorithmic}
+                \State for each
+                
+                asdfasf
+                
+                
+                \State afas
+                asfdasdf
+                
+                aadf
+            \end{algorithmic}
+        \end{algorithm}
 
     \item Using the algorithm/algorithmic environment, give pseudocode using
-        recursionn.
+        recursion.
 
-        \paragraph{Answer}
+        \paragraph{Answer} My algorithm for binary search using recursion is given in \algref{recursive}.
 
-        \todo{your answer here}
+         \begin{algorithm}
+            \caption{\textsc{BinarySearchRecursive}$(A)$}\label{alg:recursive}
+            \begin{algorithmic}
+                \State \todo{pseudocode here}
+            \end{algorithmic}
+        \end{algorithm}
 
     \item What is the loop invariant of your second algorithm? (Proofs are not
         necessary, just stating the LI is required here.  As usual, for partial
@@ -119,7 +200,7 @@ Recall the binary search algorithm.
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Four Colors Suffice}
+\collab{n/a} \nextprob{Four Colors Suffice}
 % ============================================
 % ============================================
 
@@ -168,7 +249,10 @@ biography.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+Thomas Bayes was born in London in 1702 and died April 17, 1761. He was a mathematician and Nonconformist theologian.
+He created a theorem that allows for mathematical inferences and changes in guesses based on past probabilities and new conditions. He first used it for trying to prove the existence of God. However, it has been used in computer science by Alan Turing. Turing utilized Bayes's theorem to break the Enigma code with his computer. It is also being used today in the field of artificial intelligence.
+
+Britannica, T. Editors of Encyclopaedia (2021, April 13). \textit{Thomas Bayes. Encyclopedia Britannica.} \url{https://www.britannica.com/biography/Thomas-Bayes}
 
 % %% ... the bibliography
 % \newpage
