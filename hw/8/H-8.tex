@@ -52,7 +52,7 @@ your degree.
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Probability}
+\collab{Ben Kiehn} \nextprob{Probability}
 % ============================================
 % ============================================
 
@@ -63,15 +63,42 @@ What is the expected value of the following? Justify.
         cards is a standard 52 card deck, the ordinal cards are worth their face
         value, the face cards (Jacks, Queens, Kings) are
         worth 10 points, and Aces are worth 15 points.
+        
+        \paragraph{Answer} We can ignore the suite of the card, as it doesn't affect the point value. This allows us to simply look at the 13 cards of each suite. We sum up the total point values for each card and then divide by 13 to get the expected value.
+        
+        $E(x) = \frac{1}{13}(A_{value} + 1_{value} + 2_{value} + 3_{value} + 4_{value} + 5_{value} + 6_{value} + 7_{value} + 8_{value} + 9_{value} + 10_{value} + J_{value} + Q_{value} + K_{value}$
+        
+        $E(x) = \frac{1}{13}(15 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 10 + 10 + 10) = \frac{99}{13} \approx 7.6$
+        
     \item Rolling a six-sided die.  Here, the value of a roll is the square of
         the number that appears at the top.  Assume that the die is fairly
         weighted.
+        
+        \paragraph{Answer} We can get the expected value by summing all the possible values and dividing by 6.
+        
+        $E(x) = \frac{1}{6}(1_{value} + 2_{value} + 3_{value} + 4_{value} + 5_{value} + 6_{value})$
+        
+        $E(x) = \frac{1}{6}(1 + 4 + 9 + 16 + 25 + 6) = \frac{91}{6} \approx 15.2$
+        
     \item Playing the following game: I flip a fair coin, and you select
         heads/tails while it is in the air.  If you call the correct side,
         you get 10 points.  If not, you roll a die.  If the it lands as a
         multiple of three, you get -25 points.
         If it lands on the 5, then you get 100 points.  Otherwise, no points are
         awarded nor deducted.
+        
+        \paragraph{Answer} We first can write an equation for the expected value of the coin flip by looking at the two possible outcomes. We also need to find the expected value of the dice roll and plug that into the expected value of the coin flip to get the expected value of the entire game.
+        
+        $E(x) = \frac{1}{2}(Right_{value} + Wrong_{value})$
+        
+        $E(x) = \frac{1}{2}(10 + E_{dice}(x))$
+        
+        $E_{dice}(x) = \frac{1}{6}(1_{value} + 2_{value} + 3_{value} + 4_{value} + 5_{value} + 6_{value})$
+        
+        $E_{dice}(x) = \frac{1}{6}(0 + 0 - 25 + 0 + 100 - 25) = \frac{25}{3} \approx 8.333$
+        
+        $E(x) = \frac{1}{2}(10 + \frac{25}{3}) = \frac{55}{6} \approx 9.1667$
+        
 \end{enumerate}
 
 % ============================================
