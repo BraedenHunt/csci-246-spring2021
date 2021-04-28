@@ -46,7 +46,7 @@ your degree.
 
 \paragraph{Answer}
 
-In the physical world, a degree is just a piece of paper and maybe a record in some university database. But we as a society assign it value. We recognize the difficulty, effort, and process that it takes to earn it. It is similar to currency. A dollar is a piece of paper that we all have given value to. However, we don't give any value to counterfeit or fake dollars. If someone is giving out or paying others money and that money turns out to be fake, then no one will trust any of the money that originally came from that person. The same applies to degrees. If someone faked their degree by cheating their way through the program and still got the degree, then that degree is fake. People find out, and then they don't trust the university. This invalidates all the degrees given out by the university. Cheating your way through college not only harms the cheater, but the university and all the past, present, and future students of the university. By instating a code of conduct, universities reduce cheating and prevent cheaters from obtaining degrees. This prevention protects the validity of all their students' degrees.
+In the physical world, a degree is just a piece of paper and maybe a record in some university database. But we as a society assign it value. We recognize the difficulty, effort, and process that it takes to earn it. It is similar to currency. A dollar is a piece of paper that we all have given value to. However, we don't give any value to counterfeit or fake dollars. If someone is giving out or paying others money and that money turns out to be fake, then no one will trust any of the money that originally came from that person. The same applies to degrees. If someone faked their degree by cheating their way through the program and still got the degree, then that degree is fake. People find out, and then they don't trust the university. This invalidates all the degrees given out by the university. Cheating in college not only harms the cheater, but the university and all the past, present, and future students of the university. By instating a code of conduct, universities reduce cheating and prevent cheaters from obtaining degrees. This prevention protects the validity of all their students' degrees.
 
 
 
@@ -103,7 +103,7 @@ What is the expected value of the following? Justify.
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Asymptotic Notation}
+\collab{n/a} \nextprob{Asymptotic Notation}
 % ============================================
 % ============================================
 
@@ -112,12 +112,33 @@ $f(x) = 3x^2+x$ is $\Theta(x^2)$.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+Let $f(x) = 3x^2+x$ and $g(x) = x^2$. Let $n_0 = 4$. Then, $\forall x \geq n_0$, the following holds:
+
+$f(x) = 3x^2+x \leq 3x^2 + x + (2\sqrt{3}-1)x + 1 = 3x^2 + 2\sqrt{3}x + 3 = (\sqrt{3}x+1)^2$ because we added a positive number ($(2\sqrt{3}-1)x + 1$ is positive because $x$ is positive).
+
+Note that $\sqrt{3}x + 1 \leq 2x$  $\forall x >= 1/(2-\sqrt{3})$
+
+Therefore, by squaring both sides, we get $(\sqrt{3}x+1)^2 \leq 4x^2$.
+Since $f(x) < (\sqrt{3}x+1)^2$, $f(x) < 4x^2 = 4g(x)$
+
+Thus $f(x) \leq 4g(x)$ $\forall x \geq n_0$.
+
+Furthermore, since $x > 0$ (as $4 > 0$),
+
+$3x^2+x > 3x^2 = 3g(x)$
+
+Thus, $f(x) > 3g(x)$, which also means $f(x) \geq 3g(x)$.
+
+Combining this with the previous inequality, we get:
+
+$3g(x) \leq f(x) \leq 4g(x)$ which means $f(x) \in \Theta(g(x))$ or more precisely, $f(x) \in \Theta(x^2)$, as was to be shown.
+
+
 
 
 % ============================================
 % ============================================
-\collab{\todo{}} \nextprob{Class Participation}
+\collab{n/a} \nextprob{Class Participation}
 % ============================================
 % ============================================
 
@@ -129,12 +150,12 @@ circumstances that we should account for.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+I strongly believe that I deserve an A+ for class participation. I attended every class without missing a single day. During every breakout session, I spoke and worked with my group members, most of the time being the one walking through the solutions for members who didn't understand how we got to the correct answer. I was also active outside of the breakout rooms, answering questions posed during the lecture in the chat or in Discord. I also helped my other classmates answer questions about assignments and problems in the class Discord, making sure they understood what they needed to do for a problem or nudging them in the right direction towards the solution. I'm not sure of anyway that I could have participated more in class, so that is why I believe I deserve an A+.
 
 
 % ============================================
 % ============================================
-\collab{\todo{}}
+\collab{n/a}
 \nextprob{Biography}
 % ============================================
 % ============================================
@@ -152,7 +173,11 @@ biography.
 
 \paragraph{Answer}
 
-\todo{your answer here}
+Alan Turing (mentioned in Epp 12.2) was born in London in 1912. He was a British mathematician. In the 1930s, Turing worked on a famous problem, the Entscheidungsproblem. It sought an effective method for determining exactly which statements are provable within a given system. Turing proved that there was no solution to it. He used what he called the universal Turing machine, a theoretical computer that could compute everything that was humanly computable. During World War II, Turing worked on breaking the Enigma cipher, a German machine that ciphered radio communications. The machine that Turing built was so great that it was able to decipher 84,000 messages a month at its peak. That's one message every 30 seconds. After the war, he worked on digital computers and even wrote the first ever programming manual. He also did founding work in artificial intelligence, coming up with the idea that human brains are trained digital computers. He also came up with the Turing test, a test still used today to study A.I.
+
+Unfortunately, Turing was prosecuted for being homosexual and was forced to receive hormone therapy. Later, he was found dead from cyanide poisoning. It isn't know exactly what caused this. Some speculate suicide but there isn't much evidence in his mental state for it. He could have died from inhaling cyanide fumes in the lab near his bedroom, or he could have been killed by the secret service because of his knowledge of code breaking and his ``criminal'' record.
+
+Copeland, B. (2020, June 19). \textit{Alan Turing. Encyclopedia Britannica.} \url{https://www.britannica.com/biography/Alan-Turing}
 
 % %% ... the bibliography
 % \newpage
